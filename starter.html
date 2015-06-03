@@ -110,6 +110,9 @@
       var totalFunding = 0;
 
       // ... solve for total funding ...
+      for ( i = 0; i < digs.donors.length; i++ ) {
+          totalFunding += dig.donors[i].contributions;
+      }
 
       console.log("Total contributions given by donors: ", totalFunding);
 
