@@ -138,7 +138,7 @@
       // ... solve for finds in North America ...
       for ( var i = 0; i < mine.digs.length; i++ ) {
           if ( mine.digs[i].continent == "North America") {
-              findsInNA += mine.digs[i].finds.length;   
+              findsInNA += mine.digs[i].finds.length;
           }
       }
 
@@ -150,6 +150,15 @@
       var brachsWorldwide = 0;
 
       // ... solve for total brachs worldwide ...
+      for ( var i = 0; i < mine.digs.length; i++ ) {
+          var dig = mine.digs[i];
+
+          for ( j = 0; j < dig.finds.length; j++ ) {
+              if ( dig.finds[j].genus == 'Brachiosaurus') {
+                  brachsWorldwide += dig.finds[j].specimens;
+              }
+          }
+      }
 
       console.log("Total Brachiosaurus specimens found worldwide: ", brachsWorldwide);
 
