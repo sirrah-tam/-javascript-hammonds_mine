@@ -136,6 +136,11 @@
       var findsInNA = 0;
 
       // ... solve for finds in North America ...
+      for ( var i = 0; i < mine.digs.length; i++ ) {
+          if ( mine.digs[i].continent == "North America") {
+              findsInNA += mine.digs[i].finds.length;   
+          }
+      }
 
       console.log("Total number of finds in North America: ", findsInNA);
 
